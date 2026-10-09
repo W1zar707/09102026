@@ -285,7 +285,7 @@ const Filters: React.FC<FiltersProps> = ({ groups }) => {
   return (
     <Paper sx={{ p: 2, mb: 3 }}>
       <Grid container spacing={2}>
-        <Grid item xs={12} md={5}>
+        <Grid size={{ xs: 12, md: 5 }}>
           <TextField
             fullWidth
             label="Поиск породы"
@@ -293,7 +293,7 @@ const Filters: React.FC<FiltersProps> = ({ groups }) => {
             onChange={(e) => dispatch({ type: 'SET_SEARCH', payload: e.target.value })}
           />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid size={{ xs: 12, md: 3}}>
           <FormControl fullWidth>
             <InputLabel>Группа</InputLabel>
             <Select
@@ -312,7 +312,7 @@ const Filters: React.FC<FiltersProps> = ({ groups }) => {
             </Select>
           </FormControl>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <FormControl fullWidth>
             <InputLabel>Сортировка</InputLabel>
             <Select
@@ -461,7 +461,7 @@ const Charts: React.FC<ChartsProps> = ({ data }) => {
 
   return (
     <Grid container spacing={2} sx={{ mb: 3 }}>
-      <Grid item xs={12} md={7}>
+      <Grid size={{ xs: 12, md: 7 }}>
         <Paper sx={{ p: 2, height: 360 }}>
           <Typography variant="h6" gutterBottom>
             Вес и продолжительность жизни
@@ -480,7 +480,7 @@ const Charts: React.FC<ChartsProps> = ({ data }) => {
         </Paper>
       </Grid>
 
-      <Grid item xs={12} md={5}>
+      <Grid size={{ xs: 12, md: 5 }}>
         <Paper sx={{ p: 2, height: 360 }}>
           <Typography variant="h6" gutterBottom>
             Топ-3 по характеристикам
@@ -499,7 +499,7 @@ const Charts: React.FC<ChartsProps> = ({ data }) => {
         </Paper>
       </Grid>
 
-      <Grid item xs={12} md={5}>
+      <Grid size={{ xs: 12, md: 5 }}>
         <Paper sx={{ p: 2, height: 320 }}>
           <Typography variant="h6" gutterBottom>
             Распределение по группам
@@ -526,7 +526,7 @@ const Charts: React.FC<ChartsProps> = ({ data }) => {
         </Paper>
       </Grid>
 
-      <Grid item xs={12} md={7}>
+      <Grid size={{ xs: 12, md: 7 }}>
         <Paper sx={{ p: 2, height: 320 }}>
           <Typography variant="h6" gutterBottom>
             Игривость vs Энергия
@@ -740,7 +740,7 @@ const DogsDashboard: React.FC = () => {
           </Typography>
           <Grid container spacing={2} sx={{ mb: 3 }}>
             {topThree.map((d) => (
-              <Grid item xs={12} sm={6} md={4} key={d.name}>
+              <Grid size={{ xs: 12,sm:6, md: 4 }} key={d.name}>
                 <DogCard breed={d.name} />
               </Grid>
             ))}
@@ -785,7 +785,7 @@ const theme = createTheme({
   shape: { borderRadius: 12 },
 });
 
-export default function App(): JSX.Element {
+export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
